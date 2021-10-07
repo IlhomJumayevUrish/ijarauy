@@ -1,0 +1,61 @@
+
+{% extends "wrapper.html"%}
+{% load i18n%}
+{% block index%}
+  <!-- ============================================== FEATURED PRODUCTS ============================================== -->
+
+
+        <section class="section new-arriavls">
+
+          <h3 class="section-title">{{name}} {% trans 'tuman'%} </h3>
+          <div class="owl-carousel home-owl-carousel custom-carousel owl-theme outer-top-xs">
+
+
+        <!--Uylar -->
+
+
+            {% for i in xona%}
+            <div class="item item-carousel">
+              <div class="products">
+                <div class="product">
+                  <div class="product-image">
+                    <div class="image">
+                          <a href="{% url 'app:detail' i.id %} ">
+                           <img src="{{i.rasm.all.0.image.url}}" alt="">-->
+                              <img src="{{i.rasm.all.0.image.url}}" alt="" class="hover-image">
+                          </a>
+                    </div>
+                    <!-- /.image -->
+                  </div>
+                  <!-- /.product-image -->
+                  <div class="product-info text-left">
+                    <h3 class="name"><a href="{% url 'app:detail' i.id %}">{{i.tumanda}}</a></h3>
+
+                    <div class="product-price"> <span class="price" style="color:#0f6cb2;">{% trans 'Narx'%}: {{i.narx}}$ </span></div>
+                    <div class="product-price"> <span class="price" style="color:#0f6cb2;">{% trans 'Xona'%}: {{i.xona_soni}}-ta </span></div>
+                    <!-- /.product-price -->
+
+                  </div>
+
+                </div>
+                <!-- /.product -->
+
+              </div>
+              <!-- /.products -->
+            </div>
+            {%endfor%}
+        <!--Tugadi  Uylar -->
+
+
+
+
+
+
+          </div>
+          <!-- /.home-owl-carousel -->
+        </section>
+
+
+        <!-- /.section -->
+        <!-- ============================================== FEATURED PRODUCTS : END ============================================== -->
+{% endblock index%}

@@ -1,0 +1,278 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-09-26 21:15+0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: .\pro\settings.py:35
+msgid "Uzbek"
+msgstr ""
+
+#: .\pro\settings.py:36
+msgid "English"
+msgstr ""
+
+#: .\pro\settings.py:37
+msgid "Russia"
+msgstr ""
+
+#: .\template\contact.html:43 .\template\detail.html:44
+#: .\template\my-wishlist.html:47 .\template\registration.html:42
+#: .\template\sign-in.html:42 .\template\wrapper.html:41
+msgid "Sozlamalar"
+msgstr "Settings"
+
+#: .\template\contact.html:45 .\template\detail.html:46
+#: .\template\my-wishlist.html:49 .\template\registration.html:44
+#: .\template\sign-in.html:44 .\template\sign-in.html:230
+#: .\template\wrapper.html:43
+msgid "Login"
+msgstr ""
+
+#: .\template\contact.html:46 .\template\detail.html:47
+#: .\template\my-wishlist.html:50 .\template\registration.html:45
+#: .\template\sign-in.html:45 .\template\wrapper.html:44
+msgid "Registration"
+msgstr ""
+
+#: .\template\contact.html:47 .\template\detail.html:48
+#: .\template\my-wishlist.html:51 .\template\registration.html:46
+#: .\template\sign-in.html:46 .\template\wrapper.html:46
+msgid "Logout"
+msgstr ""
+
+#: .\template\contact.html:48 .\template\detail.html:49
+#: .\template\my-wishlist.html:52 .\template\registration.html:47
+#: .\template\sign-in.html:47 .\template\wrapper.html:45
+msgid "Yuor profil"
+msgstr ""
+
+#: .\template\contact.html:49 .\template\detail.html:50
+#: .\template\my-wishlist.html:53 .\template\registration.html:48
+#: .\template\sign-in.html:48 .\template\wrapper.html:47
+msgid "Instruction"
+msgstr ""
+
+#: .\template\contact.html:62 .\template\detail.html:61
+#: .\template\my-wishlist.html:65 .\template\registration.html:61
+#: .\template\sign-in.html:61 .\template\wrapper.html:60
+msgid "LANGUAGES"
+msgstr "English"
+
+#: .\template\contact.html:107 .\template\detail.html:104
+#: .\template\detail.html:295 .\template\my-wishlist.html:106
+#: .\template\registration.html:104 .\template\sign-in.html:104
+#: .\template\wrapper.html:105
+msgid "Manzil"
+msgstr "Address"
+
+#: .\template\contact.html:108 .\template\detail.html:105
+#: .\template\home.html:34 .\template\index.html:34
+#: .\template\registration.html:105 .\template\sign-in.html:105
+#: .\template\wrapper.html:106
+msgid "Narx"
+msgstr "Price"
+
+#: .\template\contact.html:109 .\template\detail.html:106
+#: .\template\my-wishlist.html:108 .\template\registration.html:106
+#: .\template\sign-in.html:106 .\template\wrapper.html:107
+msgid "Xona soni"
+msgstr "Count of Rooms"
+
+#: .\template\contact.html:110 .\template\detail.html:107
+#: .\template\my-wishlist.html:109 .\template\registration.html:107
+#: .\template\sign-in.html:107 .\template\wrapper.html:108
+msgid "Jihozlar"
+msgstr "Furniture"
+
+#: .\template\detail.html:273 .\template\my-wishlist.html:223
+msgid "xonali"
+msgstr "rooms"
+
+#: .\template\detail.html:275
+msgid "Tuman"
+msgstr "District"
+
+#: .\template\detail.html:282
+msgid "E`lon berilgan vaqt"
+msgstr "Time of announcement"
+
+#: .\template\detail.html:296 .\template\my-wishlist.html:301
+msgid "Xonalar soni"
+msgstr "Count of Rooms"
+
+#: .\template\detail.html:297 .\template\my-wishlist.html:289
+msgid "Kimlar uchun"
+msgstr "For whom"
+
+#: .\template\detail.html:298
+msgid "Turi"
+msgstr "Type"
+
+#: .\template\detail.html:299
+msgid "Aloqa uchun"
+msgstr "Contact"
+
+#: .\template\detail.html:300
+msgid "Qo`shimcha jixozlar"
+msgstr "Additional equipment"
+
+#: .\template\detail.html:301
+msgid "Remonti"
+msgstr "Remont"
+
+#: .\template\detail.html:302
+msgid "Qo`shimcha ma`lumot"
+msgstr "Additional information"
+
+#: .\template\detail.html:311
+msgid "Narx "
+msgstr "Price"
+
+#: .\template\home.html:35 .\template\index.html:35
+msgid "Xona"
+msgstr "Room"
+
+#: .\template\index.html:10 .\template\wrapper.html:252
+msgid "tuman"
+msgstr "district"
+
+#: .\template\my-wishlist.html:104
+msgid "Qidirish"
+msgstr "Search"
+
+#: .\template\my-wishlist.html:107
+msgid "Narxi"
+msgstr "Price"
+
+#: .\template\my-wishlist.html:212
+msgid "My account"
+msgstr ""
+
+#: .\template\my-wishlist.html:234
+msgid "Oyiga"
+msgstr "months"
+
+#: .\template\my-wishlist.html:241
+msgid "o`chirish"
+msgstr "Delete"
+
+#: .\template\my-wishlist.html:252
+msgid "Hammasi yaxshi siz ro`yhatdan o`tmagansiz!"
+msgstr "All is well you are not registered"
+
+#: .\template\my-wishlist.html:253
+msgid "Login tugmasini bosish orqali ro`yhatdan o`ting!"
+msgstr "Register by clicking the login button!"
+
+#: .\template\my-wishlist.html:254
+msgid "Shunda bu oynada siz bergan e`lonlar ro`yhati kelib chiqadi!"
+msgstr "This will bring up a list of your ads in this window!"
+
+#: .\template\my-wishlist.html:265
+msgid "E`lon berish!"
+msgstr "Announcement!"
+
+#: .\template\my-wishlist.html:271
+msgid "Tuman tanlang"
+msgstr "Select a district"
+
+#: .\template\my-wishlist.html:281
+msgid "Ichki manzil"
+msgstr "Internal address"
+
+#: .\template\my-wishlist.html:285
+msgid "Turi (Dom,Hovli,,,)"
+msgstr "Type (Dom, Yard ,,,)"
+
+#: .\template\my-wishlist.html:293
+msgid "Remont"
+msgstr ""
+
+#: .\template\my-wishlist.html:297
+msgid "Qo`shimcha jihozlar"
+msgstr "Additional equipment"
+
+#: .\template\my-wishlist.html:305
+msgid "Uyning bir oylik narxi (dollorda)"
+msgstr "Monthly house price (in dollars)"
+
+#: .\template\my-wishlist.html:315
+msgid "Phone Number "
+msgstr ""
+
+#: .\template\my-wishlist.html:319
+msgid "Qo`shimcha ma`lumotlar"
+msgstr "Additional information"
+
+#: .\template\my-wishlist.html:323 .\template\my-wishlist.html:327
+#: .\template\my-wishlist.html:331 .\template\my-wishlist.html:335
+#: .\template\my-wishlist.html:339
+msgid "Rasm"
+msgstr "Image"
+
+#: .\template\my-wishlist.html:342
+msgid "Saqlash"
+msgstr "Save"
+
+#: .\template\my-wishlist.html:354
+msgid "E`lon berish uchun ro`yxatdan o`ting!"
+msgstr "Sign up to post!"
+
+#: .\template\registration.html:216
+msgid "Create a new account"
+msgstr ""
+
+#: .\template\registration.html:217
+msgid "Create your new account."
+msgstr ""
+
+#: .\template\registration.html:221
+msgid "Name"
+msgstr ""
+
+#: .\template\registration.html:225 .\template\sign-in.html:221
+msgid "Phone Number"
+msgstr ""
+
+#: .\template\registration.html:229
+msgid "Email Address"
+msgstr ""
+
+#: .\template\registration.html:234 .\template\sign-in.html:225
+msgid "Password"
+msgstr ""
+
+#: .\template\registration.html:240
+msgid "Confirm Password"
+msgstr ""
+
+#: .\template\registration.html:243
+msgid "Sign Up"
+msgstr ""
+
+#: .\template\sign-in.html:215
+msgid "Sign in"
+msgstr ""
+
+#: .\template\sign-in.html:216
+msgid "Hello, Welcome to your account."
+msgstr ""
+
+#: .\template\wrapper.html:243
+msgid "Tumanlar"
+msgstr "Districts"

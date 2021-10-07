@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+{% load static %}
+{% load i18n %}
+<html lang="en">
+<head>
+<!-- Meta -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="">
+<meta name="author" content="">
+<meta name="keywords" content="MediaCenter, Template, eCommerce">
+<meta name="robots" content="all">
+<title>Ijara Uylar</title>
+
+<!-- Bootstrap Core CSS -->
+<link rel="stylesheet" href="/static/css/bootstrap.min.css">
+
+<!-- Customizable CSS -->
+<link rel="stylesheet" href="/static/css/main.css">
+<link rel="stylesheet" href="/static/css/blue.css">
+<link rel="stylesheet" href="/static/css/owl.carousel.css">
+<link rel="stylesheet" href="/static/css/owl.transitions.css">
+<link rel="stylesheet" href="/static/css/animate.min.css">
+<link rel="stylesheet" href="/static/css/rateit.css">
+<link rel="stylesheet" href="/static/css/bootstrap-select.min.css">
+
+<!-- Icons/Glyphs -->
+<link rel="stylesheet" href="/static/css/font-awesome.css">
+
+<!-- Fonts -->
+</head>
+<body class="cnt-home">
+<!-- ============================================== HEADER ============================================== -->
+<header class="header-style-1">
+
+  <!-- ============================================== TOP MENU ============================================== -->
+  <div class="top-bar animate-dropdown">
+    <div class="container">
+      <div class="header-top-inner">
+        <div class="cnt-account">
+          <div class="cnt-block">
+          <ul class="list-unstyled list-inline">
+            <li class="dropdown dropdown-small"> <a href="#" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown" style="color:white;">{% trans 'Sozlamalar'%} <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                  <li><a href="{% url 'app:login'%}" style="color:black; ">{% trans 'Login'%}</a></li>
+                  <li><a href="{% url 'app:registration' %}" style="color:black;">{% trans 'Registration'%}</a></li>
+                  <li><a href="{% url 'app:logout' %}" style="color:black;">{% trans 'Logout'%}</a></li>
+                  <li><a href="{% url 'app:myaccount' %}" style="color:black;">{% trans 'Yuor profil'%}</a></li>
+                  <li><a href="{% url 'app:instruction' %}" style="color:black;">{% trans 'Instruction'%}</a></li>
+
+              </ul>
+            </li>
+          </ul>
+          <!-- /.list-unstyled -->
+        </div>
+        </div>
+
+        <!-- /.cnt-account -->
+
+        <div class="cnt-block">
+          <ul class="list-unstyled list-inline">
+            <li class="dropdown dropdown-small"> <a href="#" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown"><span class="value">{% trans 'LANGUAGES'%} </span><b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                {% get_current_language as LANGUAGE_CODE %}
+                {% get_available_languages as LANGUAGES %}
+                {% get_language_info_list for LANGUAGES as languages %}
+                {% for language in languages %}
+
+                <li><a {% if LANGUAGE_CODE == language.code %} style="color: red;" {% endif %}  href="/{{language.code}}" >{{ language.name_local }}</a></li>
+
+                {% endfor %}
+              </ul>
+            </li>
+          </ul>
+          <!-- /.list-unstyled -->
+        </div>
+
+        <!-- /.cnt-cart -->
+        <div class="clearfix"></div>
+      </div>
+      <!-- /.header-top-inner -->
+    </div>
+    <!-- /.container -->
+  </div>
+  <!-- /.header-top -->
+  <!-- ============================================== TOP MENU : END ============================================== -->
+  <div class="main-header">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-3 logo-holder">
+          <!-- ============================================================= LOGO ============================================================= -->
+          <div class="logo"> <a href="{% url 'app:home' %}"> <img src="/static/images/logo1.png" alt="logo"> </a> </div>
+          <!-- /.logo -->
+          <!-- ============================================================= LOGO : END ============================================================= --> </div>
+        <!-- /.logo-holder -->
+
+        <div class="col-lg-7 col-md-6 col-sm-8 col-xs-12 top-search-holder">
+          <!-- /.contact-row -->
+          <!-- ============================================================= SEARCH AREA ============================================================= -->
+          <div class="search-area">
+            <form>
+              <div class="control-group">
+                <ul class="categories-filter animate-dropdown">
+                  <li class="dropdown"> <a class="dropdown-toggle"  data-toggle="dropdown" href="category.html">Qidirish <b class="caret"></b></a>
+                    <ul class="dropdown-menu" role="menu" >
+<!--                      <li role="presentation"><a role="menuitem" tabindex="-1" href="#">- Tuman</a></li>-->
+                      <li role="presentation"><a role="menuitem" tabindex="-1" href="#">- {% trans 'Manzil'%}</a></li>
+                      <li role="presentation"><a role="menuitem" tabindex="-1" href="#">- {% trans 'Narx'%}</a></li>
+                      <li role="presentation"><a role="menuitem" tabindex="-1" href="#">- {% trans 'Xona soni'%}</a></li>
+                      <li role="presentation"><a role="menuitem" tabindex="-1" href="#">- {% trans 'Jihozlar'%}</a></li>
+                    </ul>
+                  </li>
+                </ul>
+                <input onkeyup="SearchFonction(this.value)" class="search-field" placeholder="Search here..." />
+                <a class="search-button" href="#" ></a>
+              </div>
+            </form>
+          <!-- /.search-area -->
+          <!-- ============================================================= SEARCH AREA : END ============================================================= --> </div>
+        <!-- /.top-search-holder -->
+
+
+           <div class="search_list" style="display: none;" id="search">
+            <div class="card" id="product-list">
+
+            </div>
+          </div>
+          <style>
+            .search_list{
+              margin: 0;
+              position: absolute;
+              z-index: 200;
+              box-shadow: 4px 5px 6px black;
+              background: White;
+              padding: 2px;
+              width: 92%;
+              border-radius: 10px;
+              overflow: auto;
+            }
+            .product-title{
+              padding: 2px;
+            }
+
+
+            .aaaa{
+              margin: 10px;
+              color: black;
+            }
+          </style>
+
+<script>
+            function SearchFonction(value)
+            {
+              if(value!="")
+                 {
+                  if(window.XMLHttpRequest)
+                    var xhttp=new XMLHttpRequest();
+                  else
+                    var xhttp=new ActiveXObject("Micrasoft.XMLHTTP");
+
+                  xhttp.onreadystatechange=function(){
+                    if(xhttp.readyState === 4 && xhttp.status === 200)
+                    {
+                      var data=JSON.parse(this.responseText);
+
+                      if(data.length!=0)
+                    {
+                      var p='<p>';
+                      for( var i =0;i<data.length;i++)
+                      {
+                        p+='<p><a class="aaaa" href="/detail/'+data[i].id+'"><b>Manzil: </b>'+data[i].tumanda["name"]+','+data[i].manzil+','+data[i].xona_soni+'-xona,'+data[i].narx+'$,Jixozlar :'+data[i].qoshimchajxozlar+'</a></p>';
+                      }
+                      p+="</p>";
+                      document.getElementById('product-list').innerHTML=p;
+                      document.getElementById('search').style.display="block";
+                    }
+                    else
+                    document.getElementById('search').style.display="none";
+
+                    }
+                  }
+
+                  var url="{% url 'app:search_products' %}";
+                  var url=url+"?data="+value;
+                  xhttp.open("GET",url,true);
+                  xhttp.send();
+                 }
+                 else{
+                  document.getElementById('search').style.display="none";
+
+                 }
+                }
+</script>
+
+
+          </div>
+
+
+
+
+
+
+
+
+
+
+      </div>
+      <!-- /.row -->
+
+    </div>
+    <!-- /.container -->
+
+  </div>
+        <!-- /.top-cart-row -->
+      </div>
+      <!-- /.row -->
+
+    </div>
+    <!-- /.container -->
+
+  </div>
+  <!-- /.main-header -->
+
+
+
+
+
+
+
+  <!-- ============================================== NAVBAR ============================================== -->
+  <!-- /.header-nav -->
+  <!-- ============================================== NAVBAR : END ============================================== -->
+
+</header>
+
+<!-- ============================================== HEADER : END ============================================== -->
+
+<div class="body-content">
+	<div class="container">
+    <div class="contact-page">
+		<div class="row">
+
+				<div class="col-md-12 contact-map outer-bottom-vs">
+					<iframe src="https://www.youtube.com/embed/tgbNymZ7vqY" width="600" height="450"  style="border:0"></iframe>
+				</div>
+				<div class="col-md-8 contact-form">
+	<div class="col-md-12 contact-title">
+		<h4>Contact Form</h4>
+	</div>
+	<div class="col-md-4 ">
+		<form class="register-form" role="form">
+			<div class="form-group">
+		    <label class="info-title" for="exampleInputName">Your Name <span>*</span></label>
+		    <input type="email" class="form-control unicase-form-control text-input" id="exampleInputName" placeholder="">
+		  </div>
+		</form>
+	</div>
+	<div class="col-md-4">
+		<form class="register-form" role="form">
+			<div class="form-group">
+		    <label class="info-title" for="exampleInputEmail1">Email Address <span>*</span></label>
+		    <input type="email" class="form-control unicase-form-control text-input" id="exampleInputEmail1" placeholder="">
+		  </div>
+		</form>
+	</div>
+	<div class="col-md-4">
+		<form class="register-form" role="form">
+			<div class="form-group">
+		    <label class="info-title" for="exampleInputTitle">Title <span>*</span></label>
+		    <input type="email" class="form-control unicase-form-control text-input" id="exampleInputTitle" placeholder="Title">
+		  </div>
+		</form>
+	</div>
+	<div class="col-md-12">
+		<form class="register-form" role="form">
+			<div class="form-group">
+		    <label class="info-title" for="exampleInputComments">Your Comments <span>*</span></label>
+		    <textarea class="form-control unicase-form-control" id="exampleInputComments"></textarea>
+		  </div>
+		</form>
+	</div>
+	<div class="col-md-12 outer-bottom-small m-t-20">
+		<button type="submit" class="btn-upper btn btn-primary checkout-page-button">Send Message</button>
+	</div>
+</div>
+<div class="col-md-4 contact-info">
+	<div class="contact-title">
+		<h4>Information</h4>
+	</div>
+	<div class="clearfix address">
+		<span class="contact-i"><i class="fa fa-map-marker"></i></span>
+		<span class="contact-span">Toshkent,Olmazor,Talabalar shaharchasi,12-TTJ</span>
+	</div>
+	<div class="clearfix phone-no">
+		<span class="contact-i"><i class="fa fa-mobile"></i></span>
+		<span class="contact-span">+99890 330 60 22<br>+99890 984 98 00</span>
+	</div>
+	<div class="clearfix email">
+		<span class="contact-i"><i class="fa fa-envelope"></i></span>
+		<span class="contact-span"><a href="#">ilhomjumayev6022@gmail.com</a></span>
+	</div>
+</div>
+
+      </div><!-- /.contact-page -->
+
+    </div><!-- /.row -->
+    </div>
+</div>
+<!-- ============================================================= FOOTER ============================================================= -->
+<footer id="footer" class="footer color-bg">
+  <div class="footer-bottom">
+    <div class="container">
+    </div>
+  </div>
+  <div class="copyright-bar">
+    <div class="container">
+      <div class="col-xs-12 col-sm-4 no-padding social">
+        <ul class="link">
+          <li class="fb pull-left"><a target="_blank" rel="nofollow" href="#" title="Facebook"></a></li>
+          <li class="tw pull-left"><a target="_blank" rel="nofollow" href="#" title="Twitter"></a></li>
+          <li class="googleplus pull-left"><a target="_blank" rel="nofollow" href="#" title="GooglePlus"></a></li>
+          <li class="rss pull-left"><a target="_blank" rel="nofollow" href="#" title="RSS"></a></li>
+          <li class="pintrest pull-left"><a target="_blank" rel="nofollow" href="#" title="PInterest"></a></li>
+          <li class="linkedin pull-left"><a target="_blank" rel="nofollow" href="#" title="Linkedin"></a></li>
+          <li class="youtube pull-left"><a target="_blank" rel="nofollow" href="#" title="Youtube"></a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- ============================================================= FOOTER : END============================================================= -->
+
+<!-- For demo purposes – can be removed on production -->
+
+<!-- For demo purposes – can be removed on production : End -->
+
+<!-- JavaScripts placed at the end of the document so the pages load faster -->
+<script src="/static/js/jquery-1.11.1.min.js"></script>
+<script src="/static/js/bootstrap.min.js"></script>
+<script src="/static/js/bootstrap-hover-dropdown.min.js"></script>
+<script src="/static/js/owl.carousel.min.js"></script>
+<script src="/static/js/echo.min.js"></script>
+<script src="/static/js/jquery.easing-1.3.min.js"></script>
+<script src="/static/js/bootstrap-slider.min.js"></script>
+<script src="/static/js/jquery.rateit.min.js"></script>
+<script type="text/javascript" src="/static/js/lightbox.min.js"></script>
+<script src="/static/js/bootstrap-select.min.js"></script>
+<script src="/static/js/wow.min.js"></script>
+<script src="/static/js/scripts.js"></script>
+</body>
+</html>
