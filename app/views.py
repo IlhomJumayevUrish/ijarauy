@@ -49,13 +49,13 @@ class RegistrationUser(View):
                 user = User.objects.create_user(username=userda["tel"] ,email=userda["email"] ,password= userda["password1"])
                 UserData.objects.create(user=user,name=userda["name"],phone=userda["tel"])
                 messages.add_message(request, messages.SUCCESS, "Tabrik siz ro'yxatdan o'tdingiz iltimos telefon va parolni terib saytga kiring!")
+                return render(request, 'registration.html')
             except:
                 messages.add_message(request, messages.SUCCESS, "Siz tanlagan login band yoki bu telefon raqam orqali ro'yxatdan o'tilgan ekan iltimos boshqa login tanlang!")
-
+                return render(request, 'registration.html')
         else:
             messages.add_message(request, messages.SUCCESS, "Parollar mos kelmadi!")
-
-        return render(request, 'sign-in.html')
+            return render(request, 'registration.html')
 def wrapper(request):
     tumanlar=Tumanlar.objects.all()
     return render(request, 'wrapper.html',context={"tuman":tumanlar})
