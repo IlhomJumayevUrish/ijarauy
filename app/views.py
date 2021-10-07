@@ -49,7 +49,7 @@ class RegistrationUser(View):
                 user = User.objects.create_user(username=userda["tel"] ,email=userda["email"] ,password= userda["password1"])
                 UserData.objects.create(user=user,name=userda["name"],phone=userda["tel"])
                 messages.add_message(request, messages.SUCCESS, "Tabrik siz ro'yxatdan o'tdingiz iltimos telefon va parolni terib saytga kiring!")
-                return render(request, 'registration.html')
+                return redirect('app:login')
             except:
                 messages.add_message(request, messages.SUCCESS, "Siz tanlagan login band yoki bu telefon raqam orqali ro'yxatdan o'tilgan ekan iltimos boshqa login tanlang!")
                 return render(request, 'registration.html')

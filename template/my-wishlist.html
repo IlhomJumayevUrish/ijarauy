@@ -209,7 +209,7 @@
 		<table class="table">
 			<thead>
 				<tr>
-					<th colspan="4" class="heading-title">{% trans 'My account'%}</th>
+					<th colspan="4" class="heading-title">{% if request.user.is_authenticated %} {{request.user.userlar.name}} {% endif%}{% trans 'My account'%}  </th>
 				</tr>
 			</thead>
 			<tbody>
